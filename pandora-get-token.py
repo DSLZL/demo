@@ -20,7 +20,7 @@ def make_post_request(api_endpoint, endpoint_path, payload):
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 
     try:
-        response = requests.post(url, headers=headers, data=payload)
+        response = requests.post(url, headers=headers, data=payload, timeout=60)
         return response
     except Exception as e:
         print_log(str(e))
